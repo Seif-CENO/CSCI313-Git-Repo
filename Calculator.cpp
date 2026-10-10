@@ -21,6 +21,11 @@ long long mul(long long x, long long y) {
 }
 
 int main(void) {
-
+    int a, b;
+    std::cin >> a >> b;
+    std::cout << add(a, b) << '\n';
+    std::cout << sub(a, b) << '\n';
+    std::cout << mul(a, b) << '\n';
+    std::cout << div(a, b) << '\n';
     return 0;
 }
