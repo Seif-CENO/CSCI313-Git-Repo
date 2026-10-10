@@ -22,6 +22,10 @@ long long mul(long long x, long long y) {
     return x * y;
 }
 
+long long mod(long long x, long long y) {
+    return x % y;
+}
+
 int main(void) {
     int a, b;
     std::cin >> a >> b;
