@@ -16,6 +16,10 @@ long double div(long double x, long double y) {
         std::cout << "Error: Division by zero.\n";
 }
 
+long long mul(long long x, long long y) {
+    return x * y;
+}
+
 int main(void) {
 
     return 0;
