@@ -2,7 +2,10 @@
 
 
 long double div(long double x, long double y) {
-    return x / y;
+    if (y != 0)
+        return x / y;
+    else
+        std::cout << "Error: Division by zero.\n";
 }
 
 int main(void) {
