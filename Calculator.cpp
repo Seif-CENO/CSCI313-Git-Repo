@@ -26,6 +26,20 @@ long long mod(long long x, long long y) {
     return x % y;
 }
 
+long long power(long long base, long long exp) {
+    if (exp < 0)
+        return 0;
+
+    long long result = 1;
+    while (exp > 0) {
+        if (exp % 2 == 1)
+            result *= base;
+        base *= base;
+        exp /= 2;
+    }
+    return result;
+}
+
 int main(void) {
     int a, b;
     std::cin >> a >> b;
