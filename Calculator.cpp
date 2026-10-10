@@ -47,5 +47,7 @@ int main(void) {
     std::cout << sub(a, b) << '\n';
     std::cout << mul(a, b) << '\n';
     std::cout << divide(a, b) << '\n';
+    std::cout << mod(a, b) << '\n';
+    std::cout << power(a, b) << '\n';
     return 0;
 }
