@@ -2,19 +2,21 @@ name: Simple CI/CD Demo
 
 on:
     push:
-        branches:
-            - main
-            - master
+        branches: [main, master]
+    pull_request:
+        branches: [main, master]
+    workflow_dispatch:
 
 jobs:
-    job1:
+    test:
         runs-on: ubuntu-latest
         steps:
-            - name: welcome
-              run: echo "welcome to simple CI/CD demo"
-    job2:
-        needs: job1
-        runs-on: ubuntu-latest
-        steps:
-            - name: hello
-              run: echo "hello world"
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+            - name: Run unit tests
+              run: python -m unittest discover -s tests -v
