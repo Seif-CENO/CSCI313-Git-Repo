@@ -14,7 +14,7 @@ class TestAddition(unittest.TestCase):
         self.assertEqual(add(-5, 3), 2)
 
     def test_addition_decimal_numbers(self):
-        self.assertAlmostEqual(calculate(1.5, 2.5), 4.0)
+        self.assertAlmostEqual(add(1.5, 2.5), 4.0)
 
 
 if __name__ == "__main__":

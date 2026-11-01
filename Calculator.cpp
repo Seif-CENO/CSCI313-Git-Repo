@@ -1,5 +1,7 @@
 #include <iostream>
+#include <pybind11/pybind11.h>
 
+namespace py = pybind11;
 
 long long add(int x, int y) {
     return x + y;
@@ -38,6 +40,16 @@ long long power(long long base, long long exp) {
         exp /= 2;
     }
     return result;
+}
+
+PYBIND11_MODULE(Calculator, m) {
+    m.doc() = "Calculator C++ extension module";
+    m.def("add", &add, "Add two numbers");
+    m.def("sub", &sub, "Subtract two numbers");
+    m.def("divide", &divide, "Divide two numbers");
+    m.def("mul", &mul, "Multiply two numbers");
+    m.def("mod", &mod, "Modulus two numbers");
+    m.def("power", &power, "Power two numbers");
 }
 
 int main(void) {
